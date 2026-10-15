@@ -1,0 +1,9 @@
+{
+  "MiniMaxH3MotionContextSaveLatent": {
+    "inputs": {
+      "latent": { "name": "潜空间" },
+      "filename_prefix": { "name": "保存路径" },
+      "clip_index": { "name": "本片段编号" }
+    }
+  }
+}
