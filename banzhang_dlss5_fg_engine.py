@@ -16,7 +16,7 @@
 
 来源：MIT 协议的 ComfyUI-RH-DLSS5 (RH-RunningHub/ComfyUI-RH-DLSS5)，
       其 worker 协议源自 Merserk 一系。
-2026-10-07 并入班长全家桶：删除 Linux/Wine 分支，Windows 原生运行 worker。
+2026-10-07 并入小语的工作台：删除 Linux/Wine 分支，Windows 原生运行 worker。
 """
 from __future__ import annotations
 

@@ -14,7 +14,7 @@ NVIDIA 那两套插帧（RTX 视频插帧 / DLSS5）官方只给 RTX 40/50，
 输出直接是 VIDEO，接「保存视频」即可。
 
 模型来源：Practical-RIFE（MIT）、EMA-VFI/ECCV2022 系（Apache-2.0），
-2026-10-09 并入班长全家桶。
+2026-10-09 并入小语的工作台。
 2026-10-13：「图像」输入端口移到「视频」上方；视频入口改为与「🎥 视频合并」
 同一套解析（文件路径型含 FlashVSR 直出 mp4、上传字典、内存型 VIDEO 都认）；
 取消「状态」输出口（处理信息改打在控制台）。
@@ -43,7 +43,7 @@ except Exception as _ema_exc:            # EMA 引擎整体起不来也不影响
     ema_engine = None
     _EMA_OK = False
     _EMAErrorCls = RIFEError
-    print(f"⚠️ [班长全家桶] EMA-VFI 引擎加载失败，插帧节点仅提供 RIFE：{_ema_exc}")
+    print(f"⚠️ [小语的工作台] EMA-VFI 引擎加载失败，插帧节点仅提供 RIFE：{_ema_exc}")
 
 CAT_VIDEO = "👨‍🏫班长/视频处理"
 
@@ -293,4 +293,4 @@ if any_local_weight() or ensure_model(DEFAULT_VERSION):
         "BanZhang_RIFE_Interpolation": "🎞️ 插帧·RIFE/EMA(全显卡通用·流式)",
     }
 else:
-    print("⚠️ [班长全家桶] 插帧节点暂未启用（缺模型权重），其余节点不受影响。")
+    print("⚠️ [小语的工作台] 插帧节点暂未启用（缺模型权重），其余节点不受影响。")

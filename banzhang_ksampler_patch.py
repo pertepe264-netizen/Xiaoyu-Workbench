@@ -123,7 +123,7 @@ def _apply_patch():
 
         nodes.KSampler.INPUT_TYPES = classmethod(_patched_input)
     except Exception as e:
-        logging.warning(f"[班长全家桶] KSampler.INPUT_TYPES 补丁失败: {e}")
+        logging.warning(f"[小语的工作台] KSampler.INPUT_TYPES 补丁失败: {e}")
 
     # ---------- 2. common_ksampler：透传 sigmas 到底层采样 ----------
     try:
@@ -158,7 +158,7 @@ def _apply_patch():
 
         nodes.common_ksampler = _patched_common_ksampler
     except Exception as e:
-        logging.warning(f"[班长全家桶] common_ksampler 补丁失败: {e}")
+        logging.warning(f"[小语的工作台] common_ksampler 补丁失败: {e}")
 
     # ---------- 3. KSampler.sample：接收 sigmas 并透传 ----------
     try:
@@ -169,8 +169,8 @@ def _apply_patch():
 
         nodes.KSampler.sample = _patched_sample
     except Exception as e:
-        logging.warning(f"[班长全家桶] KSampler.sample 补丁失败: {e}")
+        logging.warning(f"[小语的工作台] KSampler.sample 补丁失败: {e}")
 
 
 _apply_patch()
-print("✅ [班长全家桶] 内置 KSampler 已恢复 sigmas 输入端口")
+print("✅ [小语的工作台] 内置 KSampler 已恢复 sigmas 输入端口")

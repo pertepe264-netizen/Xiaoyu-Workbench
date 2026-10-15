@@ -161,23 +161,23 @@ def ensure_model(version: str = DEFAULT_VERSION) -> bool:
     local = find_local_weight(version)
     if local:
         _RESOLVED[version] = local
-        print(f"[班长全家桶] 检测到本地已有的 RIFE {version} 权重，直接复用（不重复下载）：\n  {local}")
+        print(f"[小语的工作台] 检测到本地已有的 RIFE {version} 权重，直接复用（不重复下载）：\n  {local}")
         return True
 
     if str(os.environ.get(_NO_AUTO_DOWNLOAD_ENV, "")).strip().lower() in ("1", "true", "yes", "on"):
         return False
 
-    print(f"[班长全家桶] 首次启用 RIFE {version}，本地未找到，正在下载模型（约 25MB）...")
+    print(f"[小语的工作台] 首次启用 RIFE {version}，本地未找到，正在下载模型（约 25MB）...")
     try:
         urllib.request.urlretrieve(url, canonical + ".tmp")
         os.replace(canonical + ".tmp", canonical)
     except Exception as exc:
-        print(f"[班长全家桶] 模型下载失败：{exc}\n"
+        print(f"[小语的工作台] 模型下载失败：{exc}\n"
               f"  可手动下载 {url}\n"
               f"  改名成 {filename} 放到 {canonical}")
         return False
     _RESOLVED[version] = canonical
-    print(f"[班长全家桶] RIFE {version} 模型下载完成。")
+    print(f"[小语的工作台] RIFE {version} 模型下载完成。")
     return True
 
 

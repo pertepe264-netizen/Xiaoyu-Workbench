@@ -5,7 +5,7 @@
  * If you incorporate or modify this code, please credit AILab as the original source:
  * https://github.com/1038lab
  *
- * 合并入班长全家桶，为取色器节点提供 COLORCODE 取色控件。
+ * 合并入小语的工作台，为取色器节点提供 COLORCODE 取色控件。
  */
 
 import { app } from "../../scripts/app.js";

@@ -148,11 +148,11 @@ def apply_archive(cls_map):
             try:
                 _mirror_to_chain(latent, anchor)
             except Exception as e:
-                print("⚠️ [班长全家桶] 续拍存档段落镜像跳过: %s" % e)
+                print("⚠️ [小语的工作台] 续拍存档段落镜像跳过: %s" % e)
             return out
 
         setattr(cls, fn_name, _patched)
         return True
     except Exception as e:
-        print("⚠️ [班长全家桶] 续拍存档未挂载: %s" % e)
+        print("⚠️ [小语的工作台] 续拍存档未挂载: %s" % e)
         return False

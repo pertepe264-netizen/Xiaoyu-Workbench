@@ -22,7 +22,7 @@ try:
         preimport=("torch",),  # CUDA 版 llama.dll 依赖 torch 已加载的 CUDA DLL
     )
 except Exception as _e:  # 自动安装器本身异常绝不能拖垮整个插件
-    print(f"[班长全家桶] llama-cpp-python 自动检查跳过（不影响 HF 模式）：{_e}")
+    print(f"[小语的工作台] llama-cpp-python 自动检查跳过（不影响 HF 模式）：{_e}")
 
 NODE_CLASS_MAPPINGS = {
     "BanzhangNodeTranslator": BanzhangNodeTranslator,

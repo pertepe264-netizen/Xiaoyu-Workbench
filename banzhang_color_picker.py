@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-班长全家桶 — 取色器 (Color Picker)
+小语的工作台 — 取色器 (Color Picker)
 合并自 Goohaitools-comfyui 的常用颜色🔵孤海，去除孤海品牌前缀。
 从预设颜色中选取，或通过取色器（COLORCODE 控件）自定义颜色，
 输出十六进制颜色字符串（如 #FFFFFF）。

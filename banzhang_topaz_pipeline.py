@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Topaz Starlight pipeline - pure functions (testable outside ComfyUI).
 
-原 ComfyUI-TopazStarlight/topaz_pipeline.py 并入班长全家桶 (banzhang_topaz_starlight.py 调用)。
+原 ComfyUI-TopazStarlight/topaz_pipeline.py 并入小语的工作台 (banzhang_topaz_starlight.py 调用)。
 
 Dual-engine support (2026-08-19):
   - neuroserver/      = 1.6.1 engine  -> 星光 2.5 (slp-25), fallback for Astra trio
@@ -36,7 +36,7 @@ NS_ENC = '-c:v h264_nvenc -profile:v high -pix_fmt yuv420p -g 30 -preset p7 -tun
 
 
 # --------------------------------------------------------------------------
-# 进度解析 / 可中断泵 (2026-09-08 并入班长全家桶时新增)
+# 进度解析 / 可中断泵 (2026-09-08 并入小语的工作台时新增)
 # --------------------------------------------------------------------------
 
 class TopazUserInterrupt(Exception):

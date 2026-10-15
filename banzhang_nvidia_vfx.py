@@ -11,7 +11,7 @@
       公共 PyPI 是空壳；也可双击 Install_RTX_VFX_Deps.bat，或放 wheels/ 离线装）
 
 改编自 Apache-2.0 协议的 Comfy-Org/ComfyUI_Nvidia_VFX_Nodes，
-2026-10-09 并入班长全家桶。
+2026-10-09 并入小语的工作台。
 2026-10-13：🔍 超分降噪节点新增「视频」输入/输出（流式边解码边超分边编码，
 原音直拷，兼容与「🎥 视频合并」一致的全部 VIDEO 形态）；取消「状态」输出口
 （处理信息改打在控制台）。
@@ -367,6 +367,6 @@ if ensure_sdk():
         "BanZhang_RTX_FrameGeneration": "🎞️ RTX 视频插帧",
     }
 else:
-    print("⚠️ [班长全家桶] RTX 超分 / 转HDR / 插帧 三个节点暂未启用（缺 nvidia-vfx），"
+    print("⚠️ [小语的工作台] RTX 超分 / 转HDR / 插帧 三个节点暂未启用（缺 nvidia-vfx），"
           "其余节点不受影响；双击插件目录里的 Install_RTX_VFX_Deps.bat 可一键补装"
           "（自动优先用 wheels/ 离线包，再走 NVIDIA 官方源），装好后重启 ComfyUI。")

@@ -20,7 +20,7 @@
     banzhang_dlss5_fg_media.py  媒体层（光流 / 视频解码 / 视频输出）
 
 改编自 MIT 协议的 ComfyUI-RH-DLSS5 (RH-RunningHub/ComfyUI-RH-DLSS5)，
-2026-10-07 并入班长全家桶。
+2026-10-07 并入小语的工作台。
 """
 import gc
 import hashlib

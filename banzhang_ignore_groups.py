@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-班长全家桶 — 忽略多组 (Ignore Groups)
+小语的工作台 — 忽略多组 (Ignore Groups)
 合并自 Goohaitools-comfyui 的忽略多组孤海，去除孤海品牌前缀。
 前端 js/banzhang_ignore_groups.js 负责编组开关列表 UI 与旁路/禁用控制。
 """

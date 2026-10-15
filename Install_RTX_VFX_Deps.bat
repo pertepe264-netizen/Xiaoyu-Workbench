@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 setlocal EnableExtensions
-title 班长全家桶 - RTX 视频特效依赖安装
+title 小语的工作台 - RTX 视频特效依赖安装
 
 REM ============================================================================
 REM  给 RTX 超分降噪 / RTX 转HDR / RTX 视频插帧 三个节点安装依赖

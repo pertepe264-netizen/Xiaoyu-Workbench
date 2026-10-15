@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """RIFE 插帧的网络结构（IFNet）+ 光流变形函数
 
-来源：Practical-RIFE (hzwer/ECCV2022-RIFE)，MIT 协议，2026-10-09 并入班长全家桶。
+来源：Practical-RIFE (hzwer/ECCV2022-RIFE)，MIT 协议，2026-10-09 并入小语的工作台。
 这里只保留推理要用的部分，训练相关的分支全部删掉了。
 """
 import torch

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-🎓 ComfyUI 班长全家桶 (Banzhang All-in-One)
+🎓 ComfyUI 小语的工作台 (Xiaoyu Workbench)
 ================================================================================
 📅 版本: v2.1.1 整合版
 👨‍🏫 作者: 班长
@@ -57,7 +57,7 @@ try:
     Audio_Cls = getattr(banzhang_audio_nodes, 'NODE_CLASS_MAPPINGS', {})
     Audio_Names = getattr(banzhang_audio_nodes, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 音频节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 音频节点加载失败: {e}")
     Audio_Cls, Audio_Names = {}, {}
 
 # 2. 潜在空间工具
@@ -66,7 +66,7 @@ try:
     Latent_Cls = getattr(banzhang_latent_tools, 'NODE_CLASS_MAPPINGS', {})
     Latent_Names = getattr(banzhang_latent_tools, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 潜在空间工具加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 潜在空间工具加载失败: {e}")
     Latent_Cls, Latent_Names = {}, {}
 
 # 3. 分辨率与图像处理
@@ -75,7 +75,7 @@ try:
     Res_Cls = getattr(banzhang_resolution, 'NODE_CLASS_MAPPINGS', {})
     Res_Names = getattr(banzhang_resolution, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 分辨率节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 分辨率节点加载失败: {e}")
     Res_Cls, Res_Names = {}, {}
 
 # 4. 文本工具
@@ -84,7 +84,7 @@ try:
     Text_Cls = getattr(banzhang_text_tools, 'NODE_CLASS_MAPPINGS', {})
     Text_Names = getattr(banzhang_text_tools, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 文本工具加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 文本工具加载失败: {e}")
     Text_Cls, Text_Names = {}, {}
 
 # 5. 字幕工具
@@ -93,7 +93,7 @@ try:
     Sub_Cls = getattr(banzhang_subtitle, 'NODE_CLASS_MAPPINGS', {})
     Sub_Names = getattr(banzhang_subtitle, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 字幕工具加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 字幕工具加载失败: {e}")
     Sub_Cls, Sub_Names = {}, {}
 
 # 6. 可视化加载器
@@ -102,7 +102,7 @@ try:
     Vis_Cls = getattr(banzhang_visual_loader, 'NODE_CLASS_MAPPINGS', {})
     Vis_Names = getattr(banzhang_visual_loader, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 可视化加载器加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 可视化加载器加载失败: {e}")
     Vis_Cls, Vis_Names = {}, {}
 
 # 7. 图像编辑API
@@ -111,7 +111,7 @@ try:
     API_Cls = getattr(banzhang_image_api, 'NODE_CLASS_MAPPINGS', {})
     API_Names = getattr(banzhang_image_api, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 图像API节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 图像API节点加载失败: {e}")
     API_Cls, API_Names = {}, {}
 
 # 8. 显存守护工具函数 (无节点，被显存守卫调用)
@@ -119,7 +119,7 @@ try:
     from . import banzhang_fast_terminate
     Terminate_Cls, Terminate_Names = {}, {}
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 显存守护工具加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 显存守护工具加载失败: {e}")
     Terminate_Cls, Terminate_Names = {}, {}
 
 # 9. 图像处理工具
@@ -128,7 +128,7 @@ try:
     Splitter_Cls = getattr(banzhang_image_splitter, 'NODE_CLASS_MAPPINGS', {})
     Splitter_Names = getattr(banzhang_image_splitter, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 图像拆分器节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 图像拆分器节点加载失败: {e}")
     Splitter_Cls, Splitter_Names = {}, {}
 
 
@@ -138,7 +138,7 @@ try:
     Trans_Cls = getattr(banzhang_translator, 'NODE_CLASS_MAPPINGS', {})
     Trans_Names = getattr(banzhang_translator, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] AI翻译器节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] AI翻译器节点加载失败: {e}")
     Trans_Cls, Trans_Names = {}, {}
 
 # 11. 额外工具 (音频保存、音频拼接、两宫格分割、替换首尾帧)
@@ -147,7 +147,7 @@ try:
     Extra_Cls = getattr(banzhang_extra_tools, 'NODE_CLASS_MAPPINGS', {})
     Extra_Names = getattr(banzhang_extra_tools, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 额外工具节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 额外工具节点加载失败: {e}")
     Extra_Cls, Extra_Names = {}, {}
 
 # 12. 视频工具 (视频合并、音乐播放器、图像对比)
@@ -156,7 +156,7 @@ try:
     Video_Cls = getattr(banzhang_video_tools, 'NODE_CLASS_MAPPINGS', {})
     Video_Names = getattr(banzhang_video_tools, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 视频工具节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 视频工具节点加载失败: {e}")
     Video_Cls, Video_Names = {}, {}
 
 # 13. 智能视频分镜切割 (场景检测与分割)
@@ -165,7 +165,7 @@ try:
     Scene_Cls = getattr(banzhang_scene_splitter, 'NODE_CLASS_MAPPINGS', {})
     Scene_Names = getattr(banzhang_scene_splitter, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 视频分镜切割节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 视频分镜切割节点加载失败: {e}")
     Scene_Cls, Scene_Names = {}, {}
 
 # 14. 显存管理 (显存预留、清理显存、清理内存 + 后台监控)
@@ -174,7 +174,7 @@ try:
     Vram_Cls = getattr(banzhang_vram_reserved, 'NODE_CLASS_MAPPINGS', {})
     Vram_Names = getattr(banzhang_vram_reserved, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 显存管理节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 显存管理节点加载失败: {e}")
     Vram_Cls, Vram_Names = {}, {}
 
 # 15. 全能显存净化 (v6.9 净空闲逻辑版 + 系统净化 + 声音提示)
@@ -183,7 +183,7 @@ try:
     CleanVram_Cls = getattr(banzhang_vram_cleaner, 'NODE_CLASS_MAPPINGS', {})
     CleanVram_Names = getattr(banzhang_vram_cleaner, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 全能显存净化节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 全能显存净化节点加载失败: {e}")
     CleanVram_Cls, CleanVram_Names = {}, {}
 
 # 16. 类型转换器 (万能转 String/Int/Float/Bool)
@@ -192,7 +192,7 @@ try:
     Conv_Cls = getattr(banzhang_type_converter, 'NODE_CLASS_MAPPINGS', {})
     Conv_Names = getattr(banzhang_type_converter, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 类型转换器节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 类型转换器节点加载失败: {e}")
     Conv_Cls, Conv_Names = {}, {}
 
 # 17. 开发工具 (URL下载、文件上传、执行时间统计、日志控制台)
@@ -201,14 +201,14 @@ try:
     DevUtils_Cls = getattr(banzhang_dev_utils, 'NODE_CLASS_MAPPINGS', {})
     DevUtils_Names = getattr(banzhang_dev_utils, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 开发工具节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 开发工具节点加载失败: {e}")
     DevUtils_Cls, DevUtils_Names = {}, {}
 
 # 18. KSampler Sigmas 补丁 (内置 KSampler 恢复 sigmas 端口)
 try:
     from . import banzhang_ksampler_patch
 except Exception as e:
-    print(f"⚠️ [班长全家桶] KSampler Sigmas 补丁加载失败: {e}")
+    print(f"⚠️ [小语的工作台] KSampler Sigmas 补丁加载失败: {e}")
 
 # 20. 显存安全 LoRA 加载器 (实时融合，规避加速 LoRA 预融合导致的 OOM)
 try:
@@ -216,7 +216,7 @@ try:
     LoraSafe_Cls = getattr(banzhang_lora_loader, 'NODE_CLASS_MAPPINGS', {})
     LoraSafe_Names = getattr(banzhang_lora_loader, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 显存安全 LoRA 加载器加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 显存安全 LoRA 加载器加载失败: {e}")
     LoraSafe_Cls, LoraSafe_Names = {}, {}
 
 # 21. CGlide 视频工具集 (合并自 ComfyUI-CGlide)
@@ -231,7 +231,7 @@ try:
         Glide_Cls.update(getattr(_m, 'NODE_CLASS_MAPPINGS', {}))
         Glide_Names.update(getattr(_m, 'NODE_DISPLAY_NAME_MAPPINGS', {}))
 except Exception as e:
-    print(f"⚠️ [班长全家桶] CGlide 节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] CGlide 节点加载失败: {e}")
     Glide_Cls, Glide_Names = {}, {}
 
 # 21a. H3 段落存档 / 调取（长片时间轴的存取层）
@@ -240,7 +240,7 @@ try:
     Clip_Cls = getattr(csglide_clip, 'NODE_CLASS_MAPPINGS', {})
     Clip_Names = getattr(csglide_clip, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 段落存档加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 段落存档加载失败: {e}")
     Clip_Cls, Clip_Names = {}, {}
 
 # 21a-2. H3 文案台（提示词独立节点：媒体架 → 文案台 → 导演台）
@@ -249,7 +249,7 @@ try:
     Desk_Cls = getattr(csglide_desk, 'NODE_CLASS_MAPPINGS', {})
     Desk_Names = getattr(csglide_desk, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 文案台加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 文案台加载失败: {e}")
     Desk_Cls, Desk_Names = {}, {}
 
 # 21a-3. H3 AI 制片中枢（N1 制片中枢 / N2a 资产入库 / N2b 资产架 / N3 DAG编排器 / N4 段尾归位）
@@ -258,20 +258,20 @@ try:
     Producer_Cls = getattr(banzhang_producer, 'NODE_CLASS_MAPPINGS', {})
     Producer_Names = getattr(banzhang_producer, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 AI 制片中枢加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 AI 制片中枢加载失败: {e}")
     Producer_Cls, Producer_Names = {}, {}
 
 # CGlide 服务端路由 (/cglide/recent_outputs、/cglide/adopt_output、/cglide/probe)，仅注册路由不注册节点
 try:
     from . import csglide_adopt  # noqa: F401
 except Exception as e:
-    print(f"⚠️ [班长全家桶] CGlide 路由加载失败: {e}")
+    print(f"⚠️ [小语的工作台] CGlide 路由加载失败: {e}")
 
 # CGlide 续接合成剪辑面板路由 (/cglide/join/info、/thumb、/waveform)，仅注册路由不注册节点
 try:
     from . import csglide_join_panel  # noqa: F401
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 续接剪辑面板路由加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 续接剪辑面板路由加载失败: {e}")
 
 # 21b. H3 钉帧遮罩（长片时间轴地基：改一段不动后面的数学保证）
 try:
@@ -279,7 +279,7 @@ try:
     Pin_Cls = getattr(banzhang_h3_pin, 'NODE_CLASS_MAPPINGS', {})
     Pin_Names = getattr(banzhang_h3_pin, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 钉帧遮罩加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 钉帧遮罩加载失败: {e}")
     Pin_Cls, Pin_Names = {}, {}
 
 # CGlide 长片段落档案路由 (/cglide/chain/summary、/clip、/update、/film、/resize、
@@ -287,7 +287,7 @@ except Exception as e:
 try:
     from . import csglide_chain  # noqa: F401
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 长片段落档案路由加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 长片段落档案路由加载失败: {e}")
 
 # 22. H3 SLA 注意力加速（内部走官方 comfy-kitchen sol-attn，合并自 ComfyUI-H3-SLA-Attention）
 try:
@@ -295,7 +295,7 @@ try:
     Sla_Cls = getattr(banzhang_sla_attention, 'NODE_CLASS_MAPPINGS', {})
     Sla_Names = getattr(banzhang_sla_attention, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 SLA 注意力节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 SLA 注意力节点加载失败: {e}")
     Sla_Cls, Sla_Names = {}, {}
 
 # 24. 孤海实用工具合并 (万能滑条、忽略多组、取色器 —— 去除孤海前缀，前端另有注释虚拟节点)
@@ -304,7 +304,7 @@ try:
     Utils_Cls = getattr(banzhang_universal_slider, 'NODE_CLASS_MAPPINGS', {})
     Utils_Names = getattr(banzhang_universal_slider, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 万能滑条节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 万能滑条节点加载失败: {e}")
     Utils_Cls, Utils_Names = {}, {}
 
 try:
@@ -312,14 +312,14 @@ try:
     Utils_Cls.update(getattr(banzhang_ignore_groups, 'NODE_CLASS_MAPPINGS', {}))
     Utils_Names.update(getattr(banzhang_ignore_groups, 'NODE_DISPLAY_NAME_MAPPINGS', {}))
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 忽略多组节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 忽略多组节点加载失败: {e}")
 
 try:
     from . import banzhang_color_picker
     Utils_Cls.update(getattr(banzhang_color_picker, 'NODE_CLASS_MAPPINGS', {}))
     Utils_Names.update(getattr(banzhang_color_picker, 'NODE_DISPLAY_NAME_MAPPINGS', {}))
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 取色器节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 取色器节点加载失败: {e}")
 
 # 25. 注释虚拟节点 (后端桩：仅用于节点库归类，渲染由 js/banzhang_note.js 接管)
 try:
@@ -327,7 +327,7 @@ try:
     Note_Cls = getattr(banzhang_note, 'NODE_CLASS_MAPPINGS', {})
     Note_Names = getattr(banzhang_note, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 注释节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 注释节点加载失败: {e}")
     Note_Cls, Note_Names = {}, {}
 
 # 26. Topaz 星光超分 (调用 Topaz neuroserver 外部引擎, 合并自 ComfyUI-TopazStarlight)
@@ -336,7 +336,7 @@ try:
     Topaz_Cls = getattr(banzhang_topaz_starlight, 'NODE_CLASS_MAPPINGS', {})
     Topaz_Names = getattr(banzhang_topaz_starlight, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] Topaz 星光超分节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] Topaz 星光超分节点加载失败: {e}")
     Topaz_Cls, Topaz_Names = {}, {}
 
 # 27. MiniMax H3 预览覆盖 (采样逐帧实时预览, 合并自 ComfyUI-MiniMaxH3-PreviewOverride)
@@ -345,7 +345,7 @@ try:
     H3Prev_Cls = getattr(banzhang_mmh3_preview, 'NODE_CLASS_MAPPINGS', {})
     H3Prev_Names = getattr(banzhang_mmh3_preview, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] MiniMax H3 预览覆盖节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] MiniMax H3 预览覆盖节点加载失败: {e}")
     H3Prev_Cls, H3Prev_Names = {}, {}
 
 # 29. H3 Latent 放大 (2D/3D 合一) —— 单节点 backend 下拉切换 2D 主干(仅空间) / 3D 主干(时空联合)，合并自 Comfyui_Minimax_h3_latent_Upscaler
@@ -354,7 +354,7 @@ try:
     H3Latent_Cls = getattr(banzhang_h3_latent_upscaler_3d, 'NODE_CLASS_MAPPINGS', {})
     H3Latent_Names = getattr(banzhang_h3_latent_upscaler_3d, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 Latent放大节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 Latent放大节点加载失败: {e}")
     H3Latent_Cls, H3Latent_Names = {}, {}
 
 # 30. Qwen Image 2.1 编辑台 (参考图走 H3 媒体架/面板槽位，与导演台同一套素材接入口径)
@@ -363,7 +363,7 @@ try:
     Qwen_Cls = getattr(csglide_qwen, 'NODE_CLASS_MAPPINGS', {})
     Qwen_Names = getattr(csglide_qwen, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] Qwen 编辑台加载失败: {e}")
+    print(f"⚠️ [小语的工作台] Qwen 编辑台加载失败: {e}")
     Qwen_Cls, Qwen_Names = {}, {}
 
 # 31. H3 终极放大（内置纯插值放大 + 空间分块重采样；只注册「参数 + 主节点」两个）
@@ -375,7 +375,7 @@ try:
                 if k in ("BanZhang_MMH3_UpscaleParams", "BanZhang_MMH3_Upscale")}
     H3Up_Names = {k: v for k, v in _H3Up_Names.items() if k in H3Up_Cls}
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 终极放大节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 终极放大节点加载失败: {e}")
     H3Up_Cls, H3Up_Names = {}, {}
 
 # 32. H3 Motion Context（MiniMax H3 片段续拍：真续声 + 潜空间钉帧，合并自 ComfyUI-H3-Motion-Context）
@@ -392,7 +392,7 @@ try:
                "MiniMaxH3MotionContextChain", "MiniMaxH3MotionContextSeamProbe"):
         H3MC_Cls.pop(_k, None)
         H3MC_Names.pop(_k, None)
-    # 统一班长全家桶风格：中文显示名/分类/参数说明（只改显示层，不动 _h3mc 内部）
+    # 统一小语的工作台风格：中文显示名/分类/参数说明（只改显示层，不动 _h3mc 内部）
     from .banzhang_h3mc_zh import apply_zh as _h3mc_apply_zh
     _h3mc_apply_zh(H3MC_Cls, H3MC_Names)
     # 续拍存档：输出改潜空间直通（原顶部状态信息面板已于 2026-10-12
@@ -404,7 +404,7 @@ try:
     from .banzhang_h3mc_archive import apply_archive as _h3mc_apply_archive
     _h3mc_apply_archive(H3MC_Cls)
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 Motion Context 节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 Motion Context 节点加载失败: {e}")
     H3MC_Cls, H3MC_Names = {}, {}
 
 # 33. 自定义 Sigma 曲线 (前端可视化画曲线，输出 SIGMAS + 步数，直连 KSampler sigmas 口)
@@ -413,7 +413,7 @@ try:
     Sigma_Cls = getattr(banzhang_sigmas_custom, 'NODE_CLASS_MAPPINGS', {})
     Sigma_Names = getattr(banzhang_sigmas_custom, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 自定义 Sigma 曲线节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 自定义 Sigma 曲线节点加载失败: {e}")
     Sigma_Cls, Sigma_Names = {}, {}
 
 # 35. H3 VAE 快速解码 (可调瓦片 + 解码时 PixelShuffle 2x 放大, 合并自 ComfyUI-MiniMaxH3_LatentUpscaler)
@@ -422,7 +422,7 @@ try:
     H3VAEDec_Cls = getattr(banzhang_h3_vae_decode, 'NODE_CLASS_MAPPINGS', {})
     H3VAEDec_Names = getattr(banzhang_h3_vae_decode, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] H3 VAE 快速解码节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] H3 VAE 快速解码节点加载失败: {e}")
     H3VAEDec_Cls, H3VAEDec_Names = {}, {}
 
 # 36. FlashVSR 扩散超分 (自包含, 权重读 models/FlashVSR, 不依赖官方插件与外部程序)
@@ -431,7 +431,7 @@ try:
     FlashVSR_Cls = getattr(banzhang_flashvsr, 'NODE_CLASS_MAPPINGS', {})
     FlashVSR_Names = getattr(banzhang_flashvsr, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] FlashVSR 扩散超分节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] FlashVSR 扩散超分节点加载失败: {e}")
     FlashVSR_Cls, FlashVSR_Names = {}, {}
 
 # 37. DLSS5 帧生成插帧 (NVIDIA NGX DLSS-FG, 需自备 models/dlss5/dlssg 引擎文件;
@@ -441,7 +441,7 @@ try:
     DLSS5FG_Cls = getattr(banzhang_dlss5_fg, 'NODE_CLASS_MAPPINGS', {})
     DLSS5FG_Names = getattr(banzhang_dlss5_fg, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] DLSS5 帧生成插帧节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] DLSS5 帧生成插帧节点加载失败: {e}")
     DLSS5FG_Cls, DLSS5FG_Names = {}, {}
 
 # 38. 图片高清放大（二采重绘）(「放大模型」下拉: ⚡插值档/upscale_models 神经网络模型档,
@@ -451,7 +451,7 @@ try:
     HiresUp_Cls = getattr(banzhang_image_upscale, 'NODE_CLASS_MAPPINGS', {})
     HiresUp_Names = getattr(banzhang_image_upscale, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] 图片高清放大二采节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] 图片高清放大二采节点加载失败: {e}")
     HiresUp_Cls, HiresUp_Names = {}, {}
 
 # 39. RTX 视频特效三件套 (NVIDIA RTX SDK 硬件加速: 超分/降噪/去模糊 + 转HDR + AI插帧;
@@ -461,7 +461,7 @@ try:
     VFX_Cls = getattr(banzhang_nvidia_vfx, 'NODE_CLASS_MAPPINGS', {})
     VFX_Names = getattr(banzhang_nvidia_vfx, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] RTX 视频特效节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] RTX 视频特效节点加载失败: {e}")
     VFX_Cls, VFX_Names = {}, {}
 
 # 40. 插帧 RIFE/EMA (开源模型, 不挑显卡, 30 系插帧的解决方案; 权重缺失时自动下载)
@@ -471,7 +471,7 @@ try:
     RIFE_Cls = getattr(banzhang_rife, 'NODE_CLASS_MAPPINGS', {})
     RIFE_Names = getattr(banzhang_rife, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] RIFE 插帧节点加载失败: {e}")
+    print(f"⚠️ [小语的工作台] RIFE 插帧节点加载失败: {e}")
     RIFE_Cls, RIFE_Names = {}, {}
 
 # 41. YuE2 智能乐谱中枢 (一个节点收口 ABC：智能路由文生规划 / 翻唱转谱 / 手动 / 直生)
@@ -480,7 +480,7 @@ try:
     SmartPlan_Cls = getattr(banzhang_yue2_smart, 'NODE_CLASS_MAPPINGS', {})
     SmartPlan_Names = getattr(banzhang_yue2_smart, 'NODE_DISPLAY_NAME_MAPPINGS', {})
 except Exception as e:
-    print(f"⚠️ [班长全家桶] YuE2 智能乐谱中枢加载失败: {e}")
+    print(f"⚠️ [小语的工作台] YuE2 智能乐谱中枢加载失败: {e}")
     SmartPlan_Cls, SmartPlan_Names = {}, {}
 
 # ==============================================================================
@@ -584,7 +584,7 @@ WEB_DIRECTORY = "./js"
 总节点数 = len(NODE_CLASS_MAPPINGS)
 
 print("=" * 60)
-print("🎓👨‍🏫 班长全家桶 (Banzhang All-in-One) v2.1 整合版")
+print("🎓👨‍🏫 小语的工作台 (Xiaoyu Workbench) v2.1 整合版")
 print("=" * 60)
 print(f"✅ 成功加载 {总节点数} 个节点:")
 

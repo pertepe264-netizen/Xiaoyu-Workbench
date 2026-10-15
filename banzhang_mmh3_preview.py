@@ -1,6 +1,6 @@
 """MiniMax H3 Preview Override — kjnodes-style live preview for MiniMax H3.
 
-合并自 ComfyUI-MiniMaxH3-PreviewOverride（班长全家桶集成版，原 node_id 保持不变）。
+合并自 ComfyUI-MiniMaxH3-PreviewOverride（小语的工作台集成版，原 node_id 保持不变）。
 
 Port of KJNodes' "Model Preview Override" for the MiniMax H3 AV model.
 
@@ -900,7 +900,7 @@ class MiniMaxH3PreviewOverride(io.ComfyNode):
         return io.NodeOutput(m)
 
 
-# 班长全家桶集成：通过 NODE_CLASS_MAPPINGS 注册 V3 节点（ComfyUI 对 io.ComfyNode
+# 小语的工作台集成：通过 NODE_CLASS_MAPPINGS 注册 V3 节点（ComfyUI 对 io.ComfyNode
 # 子类在注册/执行/object_info 全链路均有 V3 分支支持，无需 comfy_entrypoint）。
 NODE_CLASS_MAPPINGS = {
     "MiniMaxH3PreviewOverride": MiniMaxH3PreviewOverride,

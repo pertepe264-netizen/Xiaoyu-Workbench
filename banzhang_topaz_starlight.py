@@ -2,7 +2,7 @@
 """ComfyUI node: Topaz Starlight 2.5 (calls Topaz neuroserver as external engine).
 All input names in Chinese for readability.
 
-原独立插件 ComfyUI-TopazStarlight 并入班长全家桶, 管线函数见 banzhang_topaz_pipeline.py。
+原独立插件 ComfyUI-TopazStarlight 并入小语的工作台, 管线函数见 banzhang_topaz_pipeline.py。
 2026-09-08: 支持运行中进度条 (comfy ProgressBar) 与执行中/排队中两种取消 (中断时终止引擎进程)。
 """
 import os, tempfile, uuid

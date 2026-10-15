@@ -85,11 +85,11 @@ def ensure_pip_package(import_name: str, pip_name: str, wheel_pattern: str,
         pass
 
     if _auto_pip_disabled():
-        print(f"[班长全家桶] 已设 {_NO_AUTO_PIP_ENV}=1，跳过自动安装 {pip_name}。")
+        print(f"[小语的工作台] 已设 {_NO_AUTO_PIP_ENV}=1，跳过自动安装 {pip_name}。")
         return False, None
 
     display = label or pip_name
-    print(f"[班长全家桶] 首次启用 {display}，正在自动安装依赖 {pip_name}"
+    print(f"[小语的工作台] 首次启用 {display}，正在自动安装依赖 {pip_name}"
           f"（体积可能较大，需要几分钟，只此一次）...")
 
     # 2) 组装安装尝试：本地 wheel 两条（带依赖 / 不依赖），再在线
@@ -109,25 +109,25 @@ def ensure_pip_package(import_name: str, pip_name: str, wheel_pattern: str,
 
     last_tail = ""
     for name, args in attempts:
-        print(f"[班长全家桶] 尝试安装途径：{name}")
+        print(f"[小语的工作台] 尝试安装途径：{name}")
         ok, tail = _run_pip(args, timeout=timeout)
         last_tail = tail
         if not ok:
-            print(f"[班长全家桶] 该途径失败：{tail[-400:]}")
+            print(f"[小语的工作台] 该途径失败：{tail[-400:]}")
             continue
         invalidate_caches()
         _preimport(preimport)
         try:
             module = import_module(import_name)
-            print(f"[班长全家桶] {display} 依赖装好了（{name}），可以使用。")
+            print(f"[小语的工作台] {display} 依赖装好了（{name}），可以使用。")
             return True, module
         except Exception as exc:
-            print(f"[班长全家桶] 装完了但仍然无法导入 {import_name}：{exc}")
+            print(f"[小语的工作台] 装完了但仍然无法导入 {import_name}：{exc}")
 
-    print(f"[班长全家桶] {display} 依赖自动安装失败：\n{last_tail}")
+    print(f"[小语的工作台] {display} 依赖自动安装失败：\n{last_tail}")
     hint = f"{sys.executable} -m pip install {pip_name}"
     if extra_index:
         hint += f" --extra-index-url {extra_index}"
-    print(f"[班长全家桶] 可手动执行：{hint}")
-    print(f"[班长全家桶] 也可把 {wheel_pattern} 对应的 .whl 放进：{WHEELS_DIR}")
+    print(f"[小语的工作台] 可手动执行：{hint}")
+    print(f"[小语的工作台] 也可把 {wheel_pattern} 对应的 .whl 放进：{WHEELS_DIR}")
     return False, None

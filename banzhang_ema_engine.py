@@ -103,13 +103,13 @@ def ensure_model() -> bool:
     local = find_local_weight()
     if local:
         _resolved_path = local
-        print(f"[班长全家桶] 检测到本地已有的 EMA-VFI 权重，直接复用（不重复下载）：\n  {local}")
+        print(f"[小语的工作台] 检测到本地已有的 EMA-VFI 权重，直接复用（不重复下载）：\n  {local}")
         return True
 
     if str(os.environ.get(_NO_AUTO_DOWNLOAD_ENV, "")).strip().lower() in ("1", "true", "yes", "on"):
         return False
 
-    print("[班长全家桶] 首次启用 EMA-VFI 插帧，本地未找到，正在下载模型（约 250MB）...")
+    print("[小语的工作台] 首次启用 EMA-VFI 插帧，本地未找到，正在下载模型（约 250MB）...")
 
     def _report(blocks, block_size, total):
         if total > 0 and blocks % 200 == 0:
@@ -119,12 +119,12 @@ def ensure_model() -> bool:
         urllib.request.urlretrieve(MODEL_URL, canonical + ".tmp", _report)
         os.replace(canonical + ".tmp", canonical)
     except Exception as exc:
-        print(f"[班长全家桶] EMA-VFI 模型下载失败：{exc}\n"
+        print(f"[小语的工作台] EMA-VFI 模型下载失败：{exc}\n"
               f"  手动下载 {MODEL_URL}\n"
               f"  放到 {canonical}")
         return False
     _resolved_path = canonical
-    print("[班长全家桶] EMA-VFI 模型下载完成。")
+    print("[小语的工作台] EMA-VFI 模型下载完成。")
     return True
 
 
@@ -187,13 +187,13 @@ def load_model():
 
     missing, unexpected = net.load_state_dict(state, strict=False)
     if missing:
-        print(f"⚠️ [班长全家桶] EMA-VFI 权重缺失 {len(missing)} 个键，示例：{list(missing)[:3]}")
+        print(f"⚠️ [小语的工作台] EMA-VFI 权重缺失 {len(missing)} 个键，示例：{list(missing)[:3]}")
 
     net.eval().to(mm.get_torch_device())
     for p in net.parameters():
         p.requires_grad_(False)
     _CACHE["net"] = net
-    print(f"[班长全家桶] EMA-VFI 模型加载完成（{sum(p.numel() for p in net.parameters()) / 1e6:.1f}M 参数）。")
+    print(f"[小语的工作台] EMA-VFI 模型加载完成（{sum(p.numel() for p in net.parameters()) / 1e6:.1f}M 参数）。")
     return net
 
 

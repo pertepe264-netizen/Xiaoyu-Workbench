@@ -49,5 +49,5 @@ def apply_status(cls_map):
         cls.save = _patched_save
         return True
     except Exception as e:
-        print(f"⚠️ [班长全家桶] 续拍存档直通改造未挂载: {e}")
+        print(f"⚠️ [小语的工作台] 续拍存档直通改造未挂载: {e}")
         return False

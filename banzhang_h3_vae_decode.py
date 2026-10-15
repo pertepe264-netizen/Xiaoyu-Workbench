@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-🎬 班长全家桶 — H3 VAE 快速解码（自带模型加载 + 2x PixelShuffle 放大）
+🎬 小语的工作台 — H3 VAE 快速解码（自带模型加载 + 2x PixelShuffle 放大）
 ================================================================================
 原版作者: Tridae (ComfyUI-MiniMaxH3_LatentUpscaler 的 vae_decode.py)
-班长全家桶版改造:
+小语的工作台版改造:
     1. 不再需要官方「VAE加载器」节点: 直接从 models/vae 下拉选择 H3 VAE 文件,
        节点自己读取检查点并构建 MiniMaxH3VideoVAE, 官方原版(3通道)与
        改造版 2x PixelShuffle(12通道)检查点都能自动识别加载。
     2. 潜空间输入直接接采样器输出的音视频联合潜空间(NestedTensor),
        自动剥离音频流, 只解码视频流, 输出图像。
     3. 解码完自动把模型卸载回内存(不吃推理显存), 模型本体按文件缓存, 不重复读盘。
-    4. 参数说明/分类/显示名统一班长全家桶中文风格。
+    4. 参数说明/分类/显示名统一小语的工作台中文风格。
     5. 模型精度可就地切换(自动/FP16/BF16/FP32), 不必改 ComfyUI 启动参数。
 
 为什么官方 VAELoader 加载不了改造版 2x VAE:
@@ -623,7 +623,7 @@ class BanZhangH3VAEDecodeFast:
 
 
 # ==========================================
-# 班长全家桶注册
+# 小语的工作台注册
 # ==========================================
 NODE_CLASS_MAPPINGS = {
     "BanZhang_H3VAEDecodeFast": BanZhangH3VAEDecodeFast,

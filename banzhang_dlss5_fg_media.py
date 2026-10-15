@@ -8,7 +8,7 @@
 
 来源：MIT 协议的 ComfyUI-RH-DLSS5 (RH-RunningHub/ComfyUI-RH-DLSS5)，
       其帧交换有一部分源自 Merserk 一系的 worker 协议。
-2026-10-07 并入班长全家桶时的改动：
+2026-10-07 并入小语的工作台时的改动：
     - 删除 Linux/Wine/Xvfb/多卡钉卡等本机用不到的分支
     - 删除 sanitize_user_text()（它把真实文件名洗成"增强引擎"，妨碍排障）
     - 报错信息改为中文，直接显示缺失的真实文件名

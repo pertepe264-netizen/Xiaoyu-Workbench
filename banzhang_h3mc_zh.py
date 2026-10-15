@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""H3 Motion Context 六节点的中文化与归类层（班长全家桶统一风格）。
+"""H3 Motion Context 六节点的中文化与归类层（小语的工作台统一风格）。
 
 只改显示层：节点显示名 / 分类 / 参数名 label / 参数悬停说明 / 输出槽位名。
 不动 _h3mc 内部任何代码——上游升级直接覆盖 _h3mc/ 目录即可，本文件不受影响。
@@ -147,7 +147,7 @@ def _wrap_input_types(orig, spec_map, defaults=None):
 
 
 def apply_zh(cls_map, name_map):
-    """在注册层统一班长全家桶风格。cls_map/name_map 是 _h3mc 的两个映射 dict。
+    """在注册层统一小语的工作台风格。cls_map/name_map 是 _h3mc 的两个映射 dict。
 
     单个节点处理失败只跳过该节点，不拖垮整包加载。
     """
@@ -167,4 +167,4 @@ def apply_zh(cls_map, name_map):
                     _wrap_input_types(cls.INPUT_TYPES, spec_map,
                                       _H3MC_DEFAULTS.get(node_id)))
         except Exception as e:
-            print(f"⚠️ [班长全家桶] H3 续拍节点 {node_id} 中文化跳过: {e}")
+            print(f"⚠️ [小语的工作台] H3 续拍节点 {node_id} 中文化跳过: {e}")

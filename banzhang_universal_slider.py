@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-班长全家桶 — 万能滑条 (Universal Slider)
+小语的工作台 — 万能滑条 (Universal Slider)
 合并自 Goohaitools-comfyui 的孤海万能滑条，去除孤海品牌前缀。
 前端 js/banzhang_universal_slider.js 负责 Canvas 滑条绘制与设置面板。
 """

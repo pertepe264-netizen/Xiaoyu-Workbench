@@ -106,7 +106,7 @@ app.registerExtension({
         }
       }
     } catch (err) {
-      console.error("[班长全家桶] 视频节点端口迁移失败：", err);
+      console.error("[小语的工作台] 视频节点端口迁移失败：", err);
     }
   },
 });

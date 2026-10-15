@@ -13,7 +13,7 @@ banzhang_nvidia_vfx.py。
       插件启动时会自动装；也可把 wheel 放进 wheels/ 目录做离线安装（见 ensure_sdk）。
 
 改编自 Apache-2.0 协议的 Comfy-Org/ComfyUI_Nvidia_VFX_Nodes，
-2026-10-09 并入班长全家桶。
+2026-10-09 并入小语的工作台。
 """
 import math
 import os
@@ -124,7 +124,7 @@ def ensure_sdk() -> bool:
     if str(os.environ.get(_NO_AUTO_PIP_ENV, "")).strip().lower() in ("1", "true", "yes", "on"):
         return False
 
-    print(f"[班长全家桶] 首次启用 RTX 视频特效，正在自动安装依赖 {_PACKAGE}"
+    print(f"[小语的工作台] 首次启用 RTX 视频特效，正在自动安装依赖 {_PACKAGE}"
           f"（约 400MB，需要几分钟，只此一次）...")
 
     # 安装尝试：(说明, pip 参数)。能走到这里说明 import nvvfx 已经失败，
@@ -143,28 +143,28 @@ def ensure_sdk() -> bool:
 
     last_tail = ""
     for label, args in attempts:
-        print(f"[班长全家桶] 尝试安装途径：{label}")
+        print(f"[小语的工作台] 尝试安装途径：{label}")
         ok, tail = _pip_install(args)
         last_tail = tail
         if not ok:
-            print(f"[班长全家桶] 该途径失败：{tail[-400:]}")
+            print(f"[小语的工作台] 该途径失败：{tail[-400:]}")
             continue
         invalidate_caches()
         try:
             nvvfx = import_module("nvvfx")
-            print(f"[班长全家桶] RTX 视频特效依赖装好了（{label}），三个节点可以直接用。")
+            print(f"[小语的工作台] RTX 视频特效依赖装好了（{label}），三个节点可以直接用。")
             return True
         except ImportError as exc:
-            print(f"[班长全家桶] 装完了但仍然导入失败：{exc}")
+            print(f"[小语的工作台] 装完了但仍然导入失败：{exc}")
 
     # 可能装到了空壳包，或装完没导入成功，统一给人话提示
-    print(f"[班长全家桶] 自动安装依赖失败：\n{last_tail}")
+    print(f"[小语的工作台] 自动安装依赖失败：\n{last_tail}")
     _print_install_help()
     return False
 
 
 def _print_install_help() -> None:
-    print("[班长全家桶] RTX 视频特效依赖安装办法（任选一个）："
+    print("[小语的工作台] RTX 视频特效依赖安装办法（任选一个）："
           f"\n  1) 双击插件目录里的 Install_RTX_VFX_Deps.bat（自动优先用 wheels/ 离线包，再试 NVIDIA 官方源）"
           f"\n  2) 联网手动执行（注意必须带 NVIDIA 官方源，公共 PyPI 只有空壳）："
           f"\n       {sys.executable} -m pip install {_PACKAGE} --extra-index-url {_NVIDIA_INDEX}"

@@ -3226,7 +3226,7 @@ try:
     try:
         store.register_routes()
     except Exception as _se:
-        print("⚠️ [班长全家桶] SQLite 状态库路由注册失败: %s" % _se)
+        print("⚠️ [小语的工作台] SQLite 状态库路由注册失败: %s" % _se)
 
 except Exception as _e:      # pragma: no cover
-    print("⚠️ [班长全家桶] H3 段落档案路由注册失败（节点仍可用，仅时间轴面板受影响）: %s" % _e)
+    print("⚠️ [小语的工作台] H3 段落档案路由注册失败（节点仍可用，仅时间轴面板受影响）: %s" % _e)

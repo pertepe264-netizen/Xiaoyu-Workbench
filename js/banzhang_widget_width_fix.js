@@ -1,4 +1,4 @@
-// 班长全家桶 — Widget 宽度错位修复（自动生效版）
+// 小语的工作台 — Widget 宽度错位修复（自动生效版）
 //
 // 修复 ComfyUI_frontend #12443：WidgetLegacy.vue 的 draw() 每帧无条件把
 // Vue 容器的 clientWidth 写进 widget.width，LiteGraph 画布模式下渲染器
@@ -6,7 +6,7 @@
 // 拖动/缩放节点后出现错位压缩。
 //
 // 与独立修复包 (ComfyUI-LegacyWidgetWidthFix) 的区别：
-//   - 随班长全家桶前端自动加载，无需向工作流添加任何节点
+//   - 随小语的工作台前端自动加载，无需向工作流添加任何节点
 //   - 上游官方修复该 bug 后，本补丁自动变为 no-op（vueNodesMode 放行写入）
 //
 // 移植自 ComfyUI-LegacyWidgetWidthFix (web/bugfix.js)
@@ -73,7 +73,7 @@ function unguardWidget(w) {
 }
 
 function patchActive() {
-  // 班长全家桶加载即常开。保留此函数以兼容 setter 内的原逻辑。
+  // 小语的工作台加载即常开。保留此函数以兼容 setter 内的原逻辑。
   return true;
 }
 

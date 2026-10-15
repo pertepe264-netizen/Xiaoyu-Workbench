@@ -1,4 +1,4 @@
-# 👨‍🏫 班长全家桶 (Banzhang All-in-One) - 依赖清单
+# 👨‍🏫 小语的工作台 (Xiaoyu Workbench) - 依赖清单
 # 安装命令: pip install -r requirements.txt
 
 # ==================== 核心依赖 (必需) ====================
